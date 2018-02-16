@@ -28,5 +28,7 @@ echo ""
 
 #date +%s | sha256sum | base64 | head -c 32 ; echo
 
-sed -i "s/;bind-address.*/#bind-address = 127.0.0.1/" /etc/mysql/mysql.conf.d/mysqld.cnf
+#sed -i "s/bind-address.*/#bind-address = 127.0.0.1/" /etc/mysql/mysql.conf.d/mysqld.cnf
+
+#/etc/init.d/mysql restart
 
