@@ -11,7 +11,9 @@ echo ""
 
 
 #sudo apt-get update
-#sudo apt-get install php7.2-mysql mysql-server
+#sudo apt-get install php7.2-mysql mysql-client mysql-server
+
+
 
 # you will be asked for a root password
 
