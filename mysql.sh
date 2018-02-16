@@ -32,3 +32,4 @@ echo ""
 
 #/etc/init.d/mysql restart
 
+#GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password';
