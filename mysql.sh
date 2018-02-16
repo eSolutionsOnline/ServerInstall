@@ -20,6 +20,8 @@ echo ""
 
 #sudo /etc/init.d/mysql restart
 
+#mysqladmin -p -u root version
+
 # generate random string!!
 
 #date +%s | sha256sum | base64 | head -c 32 ; echo
