@@ -42,11 +42,6 @@ fi
 echo ""
 echo ""
 
-
-exit 1
-
-
-
 echo -e "\e[1m\e[5m\033[31m!!!WARINING!!!\e[0m\e[25m\e[21m"
 
 echo -e "This script will now download what is needed then execute them \e[1mall files will be removed after the install \e[21m "
