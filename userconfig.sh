@@ -71,3 +71,24 @@ echo "cd /home/$user/$appname" >> ~/.profile
 
 #echo "init git flow"
 #git flow init
+
+echo "Add an SSH key"
+read -p "Would you like to add an SSH key? [y/N]? "
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    read -p "Please paste you key "
+    if [[ $REPLY ]]; then
+        echo ""
+        
+        cat > /home/$user/.ssh/authorized_keys << EOF
+$REPLY
+EOF
+        cat > /home/$user/.ssh/authorized_keys2 << EOF
+$REPLY
+EOF
+
+    else
+        echo "No key to add."
+    fi
+fi
+echo ""
+echo ""
