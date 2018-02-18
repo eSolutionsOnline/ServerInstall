@@ -1,5 +1,5 @@
 #!/bin/bash
-###### userconfig.sh
+###### security.sh
 appname=$2
 user=$1
 
