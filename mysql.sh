@@ -12,7 +12,7 @@ echo "Install Some Basic Packages"
 
 echo -e "\e[1m\e[5m\033[31m!!!IMPORTANT!!!\e[0m\e[25m\e[21m"
 read -p "During the MySQL install you will be asked for a password for the root user please use 'password' [press any key to continue] "
-apt-get install php7.2-mysql mysql-client mysql-server
+apt-get install -y php7.2-mysql mysql-client mysql-server
 
 ##!!!NOT USED YET!!!#
 ##mysql_secure_installation
