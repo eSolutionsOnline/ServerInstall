@@ -60,8 +60,9 @@ mkdir install
 wget https://raw.githubusercontent.com/eSolutionsOnline/ServerInstall/master/core.sh -O install/core.sh
 wget https://raw.githubusercontent.com/eSolutionsOnline/ServerInstall/master/nginxphp72fpm.sh -O install/nginxphp72fpm.sh
 wget https://raw.githubusercontent.com/eSolutionsOnline/ServerInstall/master/mysql.sh -O install/mysql.sh
+wget https://raw.githubusercontent.com/eSolutionsOnline/ServerInstall/master/security.sh -O install/security.sh
+wget https://raw.githubusercontent.com/eSolutionsOnline/ServerInstall/master/userconfig.sh -O install/userconfig.sh
 wget https://raw.githubusercontent.com/eSolutionsOnline/ServerInstall/master/cleanup.sh -O install/cleanup.sh
-
 chmod -R 0777 install
 
 mkdir -p /home/$user/$appname/web/
