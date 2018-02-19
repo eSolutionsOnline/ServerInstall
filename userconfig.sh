@@ -14,6 +14,9 @@ echo -e "\e[1m\e[5m\033[31m!!!IMPORTANT!!!\e[0m\e[25m\e[21m"
 read -p "Your new public key is in your home folder [press any key to continue] "
 echo ""
 echo ""
+cat /home/$user/$user.pub
+echo ""
+echo ""
 echo ""
 
 read -p "Would you like to setup a GIT user? [y/N]? "
