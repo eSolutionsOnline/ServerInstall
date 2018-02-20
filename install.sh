@@ -95,4 +95,7 @@ rm $0
 echo "All scripts have been executed and removed"
 echo ""
 echo ""
+
+echo -e "\e[1m\e[5m\033[31m!!!IMPORTANT!!!\e[0m\e[25m\e[21m"
+echo "It is recomended that you reboot the server now for all changes to take effect"
 echo ""
