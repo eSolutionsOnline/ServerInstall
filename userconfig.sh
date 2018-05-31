@@ -7,7 +7,7 @@ user=$1
 echo "Generate a RSA key"
 ssh-keygen -t rsa
 
-echo  "Copy this to the home folder"
+echo  "Copying to the home folder"
 cp /home/$user/.ssh/id_rsa.pub /home/$user/$user.pub
 
 echo -e "\e[1m\e[5m\033[31m!!!IMPORTANT!!!\e[0m\e[25m\e[21m"
@@ -68,7 +68,7 @@ source /home/$user/.bashrc
 
 
 
-echo "set default home folder"
+echo "Setting default home folder"
 echo "cd /home/$user/$appname" >> ~/.profile
 
 
