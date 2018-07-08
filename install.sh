@@ -4,6 +4,8 @@
 svrversion=ubuntu-16.04-server-amd64
 user=$USER
 install_source="/home/$user/install/"
+appversion=""
+appsource=""
 
 echo '.___                 __         .__  .__      _________            .__        __   '
 echo '|   | ____   _______/  |______  |  | |  |    /   _____/ ___________|__|______/  |_ '
@@ -25,11 +27,36 @@ if [[ ! $REPLY ]]; then
 fi
 
 appname=$REPLY
+
+echo "What version would you like to install:"
+echo "[1] Nginx, PHP7.1 FPM, MySQL"
+echo "[2] Nginx, PHP7.2 FPM, MySQL"
+#echo "[3] Nginx, PHP7.3 FPM, MySQL (Development)"
+read -p "Default Option [1] "
+case $REPLY in
+    2)
+        echo "You have chosen Nginx, PHP7.2 FPM, MySQL"
+        appversion="Nginx, PHP7.2 FPM, MySQL"
+        appsource="nginxmysqlphp72fpm.sh"
+        ;;
+#    3)
+#        echo "You have chosen Nginx, PHP7.3 FPM, MySQL"
+#        appversion="Nginx, PHP7.3 FPM, MySQL"
+#        appsource="nginxmysqlphp73fpm.sh"
+#        ;;
+    *)
+        echo "You have chosen Nginx, PHP7.1 FPM, MySQL"
+        appversion="Nginx, PHP7.1 FPM, MySQL"
+        appsource="nginxmysqlphp71fpm.sh"
+        ;;
+esac
+
 echo ""
 echo ""
 echo -e "Server Version:\t\t$svrversion"
 echo -e "User:\t\t\t$user"
 echo -e "Application Name:\t$appname"
+echo -e "Application Config:\t$appversion"
 echo ""
 read -p "Are the details above correct? [y/N]? "
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
@@ -56,10 +83,11 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     exit 1
 fi
 
+
+
 mkdir install
 wget https://raw.githubusercontent.com/eSolutionsOnline/ServerInstall/master/core.sh -O install/core.sh
-wget https://raw.githubusercontent.com/eSolutionsOnline/ServerInstall/master/nginxphp72fpm.sh -O install/nginxphp72fpm.sh
-wget https://raw.githubusercontent.com/eSolutionsOnline/ServerInstall/master/mysql.sh -O install/mysql.sh
+wget https://raw.githubusercontent.com/eSolutionsOnline/ServerInstall/master/$appsource -O install/app.sh
 wget https://raw.githubusercontent.com/eSolutionsOnline/ServerInstall/master/security.sh -O install/security.sh
 wget https://raw.githubusercontent.com/eSolutionsOnline/ServerInstall/master/userconfig.sh -O install/userconfig.sh
 wget https://raw.githubusercontent.com/eSolutionsOnline/ServerInstall/master/cleanup.sh -O install/cleanup.sh
@@ -73,10 +101,7 @@ ls
 sudo bash $install_source"core.sh" "$user" "$appname"
 echo ""
 echo ""
-sudo bash $install_source"nginxphp72fpm.sh" "$user" "$appname"
-echo ""
-echo ""
-sudo bash $install_source"mysql.sh" "$user" "$appname"
+sudo bash $install_source"app.sh" "$user" "$appname"
 echo ""
 echo ""
 bash $install_source"userconfig.sh" "$user" "$appname"
