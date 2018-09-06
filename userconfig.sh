@@ -66,9 +66,9 @@ EOF
 
 source /home/$user/.bashrc
 
-//NEEDS TESTING
-//echo "Setting vendor bin path"
-//echo 'PATH="./vendor/bin:$PATH"' >> ~/.profile
+
+echo "Setting vendor bin path"
+echo 'PATH="./vendor/bin:$PATH"' >> ~/.profile
 
 echo "Setting default home folder"
 echo "cd /home/$user/$appname" >> ~/.profile
