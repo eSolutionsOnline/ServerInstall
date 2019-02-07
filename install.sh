@@ -31,7 +31,8 @@ appname=$REPLY
 echo "What version would you like to install:"
 echo "[1] Nginx, PHP7.1 FPM, MySQL"
 echo "[2] Nginx, PHP7.2 FPM, MySQL"
-#echo "[3] Nginx, PHP7.3 FPM, MySQL (Development)"
+echo "[3] Nginx, PHP7.2 FPM, PostGres"
+#echo "[4] Nginx, PHP7.3 FPM, MySQL (Development)"
 read -p "Default Option [1] "
 case $REPLY in
     2)
@@ -39,11 +40,11 @@ case $REPLY in
         appversion="Nginx, PHP7.2 FPM, MySQL"
         appsource="nginxmysqlphp72fpm.sh"
         ;;
-#    3)
-#        echo "You have chosen Nginx, PHP7.3 FPM, MySQL"
-#        appversion="Nginx, PHP7.3 FPM, MySQL"
-#        appsource="nginxmysqlphp73fpm.sh"
-#        ;;
+    3)
+        echo "You have chosen Nginx, PHP7.3 FPM, PostGres"
+        appversion="Nginx, PHP7.3 FPM, PostGres"
+        appsource="nginxpostgresphp72fpm.sh"
+        ;;
     *)
         echo "You have chosen Nginx, PHP7.1 FPM, MySQL"
         appversion="Nginx, PHP7.1 FPM, MySQL"

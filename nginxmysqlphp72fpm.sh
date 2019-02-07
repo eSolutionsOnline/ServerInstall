@@ -36,7 +36,7 @@ server {
     listen 80 default_server;
     server_name $appname;
     set \$siteroot "/home/$user/$appname/";
-    set \$webfolder "web";
+    set \$webfolder "public";
     client_max_body_size 20m;
     access_log  /var/log/nginx/access.log;
     error_log  /var/log/nginx/error.log;
@@ -71,7 +71,7 @@ server {
     listen 80 default_server;
     server_name $appname;
     set \$siteroot "/home/$user/$appname/";
-    set \$webfolder "web";
+    set \$webfolder "public";
     client_max_body_size 20m;
     access_log  /var/log/nginx/access.log;
     error_log  /var/log/nginx/error.log;
@@ -216,7 +216,7 @@ mysql -uroot -ppassword -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED
 mysql -uroot -ppassword -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY '$newpass';"
 
 echo "Updating Test page"
-cat > /home/$user/$appname/web/index.php << EOF
+cat > /home/$user/$appname/public/index.php << EOF
 <?php
 \$db = new PDO('mysql:host=localhost;dbname=$appname;charset=utf8mb4', '$user', '$newpass');
 \$query = \$db->query("SELECT * FROM $appname");
